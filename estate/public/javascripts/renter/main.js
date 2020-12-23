@@ -46,3 +46,7 @@ function getLoginRegister() {
   }
   $("#tab-login-subcrible").append(template);
 }
+
+$('.nav-item.nav-link').click(function () {
+  Cookies.remove("idPost");
+})
