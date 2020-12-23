@@ -5,16 +5,16 @@ $.ajax({
   method: 'post',
   url: '/seen-post',
   data: {
-    idPost:  Cookies.get("idPost")
+    idPost: Cookies.get("idPost")
   }
-}).then(function(result){
+}).then(function (result) {
   console.log(result);
-}).catch(function(err){
-   console.log(err);
+}).catch(function (err) {
+  console.log(err);
 })
- 
- 
- 
+
+
+
 
 $.ajax({
   method: 'get',
@@ -41,17 +41,17 @@ $.ajax({
   //ID baif vieets
   $("#name").attr("data-id-post", article._id);
   $("#name").text(article.kind_room);
-  
+
   $("#name").attr("idPost", article._id);
-  
+
   $("#address").text(article.address_room);
-  
-  if(article.rent_status == "Not yet hired"){
+
+  if (article.rent_status == "Not yet hired") {
     article.rent_status = "Chưa được thuê";
-  }else{
+  } else {
     article.rent_status = "Đã được thuê";
   }
- 
+
   $("#status").text(article.rent_status);
   $("#an-ninh").text(article.general_owner);
   $("#dien-tich").text(article.area);
@@ -111,7 +111,7 @@ $('#send-comment').click(function () {
 
   if (token) {
     if (content && $('span.fa.fa-star').hasClass('selected')) {
-      var voteStar = $('.star.selected ~ .star').length;
+      var voteStar = $('.star.selected ~ .star').length + 1;
       var idPost = $('#name').attr('data-id-post');
       $.ajax({
         url: '/comment-renter',
