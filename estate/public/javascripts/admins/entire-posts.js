@@ -261,6 +261,13 @@ function handleEditAccept() {
     width: 75% !important;
     margin: auto;
   }
+  label {
+    font-weight: bold;
+  }
+  .form-group.col-6 {
+    width: 50%;
+    float: left;
+}
 </style>
  
 <div class='row'>
