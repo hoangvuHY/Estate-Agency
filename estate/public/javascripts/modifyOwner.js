@@ -68,7 +68,7 @@ body {
 <div class="row">
   <div class="col-md-3 border-right">
     <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
-        src="https://b...content-available-to-author-only...y.com/img/Content/avatar/avatar7.png"><span
+        src="https://bootdey.com/img/Content/avatar/avatar7.png"><span
         class="font-weight-bold">${dataUser.name}</span><span class="text-black-50">${dataUser.email}</span><span> </span></div>
   </div>
   <div class="col-md-5 border-right">
@@ -93,12 +93,12 @@ body {
         </div>
         <div class="col-md-12">
         <label for="username">Username </label>
-        <input  value="${dataUser.username}" type="text" id="username" class="form-control">
+        <input value="${dataUser.username}" type="text" id="username" class="form-control">
         <span id="errorUsername"></span>
         </div>
         <div class="col-md-12">
-        <button onClick=handleSave.call(this) data-id= ${dataUser._id} class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
-        id="btnSignin">Lưu</button>
+            <button onClick=handleSave.call(this) data-id= ${dataUser._id} class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+            id="btnSignin">Lưu</button>
         </div> 
       </div>
       <div class="row mt-3">
@@ -108,6 +108,12 @@ body {
  
       </div>
     </div>
+    
+  </div>
+  <div class="col-md-4 border-right">
+    <div class="d-flex flex-column "><img style="width: 100%;height: 100%;"
+        src="https://image.bnews.vn/MediaUpload/Org/2017/12/05/095418_cay-thong-noel.jpeg"><span
+     
   </div>
 </div>
 </div>
@@ -143,15 +149,16 @@ body {
       $(".content").append(template);
     }
   }).catch((error) => {
- 
+
   })
 }
- 
+
 function handleSave() {
-  var name = $(this).parent().children().find("input#name").val();
-  var phone = $(this).parent().children().find("input#phone").val();
-  var address = $(this).parent().children().find("input#address").val();
-  var username = $(this).parent().children().find("input#username").val();
+  console.log();
+  var name = $('#name').val();
+  var phone = $('#phone').val();
+  var address = $('#address').val();
+  var username = $('#username').val();
   var idOwner = $(this).attr("data-id");
   $.ajax({
     url: "/modify-owner/info-user",
@@ -176,4 +183,3 @@ function handleSave() {
     })
   console.log(name, phone, address, username);
 }
- 

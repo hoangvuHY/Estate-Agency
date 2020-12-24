@@ -31,14 +31,14 @@
                 location.reload()
               }, 1000 * 30);
               $('body').attr('style', `height: 100vh;background: url(../background-login-logout.gif);background-size: cover;background-repeat: no-repeat;background-position-y: -29px;background-position-x: -5px;
-          display: flex;
-              align-items: center;
-              justify-content: center; 
+                display: flex;
+                    align-items: center;
+                    justify-content: center; 
           `);
               $('.notification-approval').attr('style', `
-            color : white;
-            text-align : center;
-            
+                  color : white;
+                  text-align : center;
+                  
           `);
 
 
@@ -47,8 +47,8 @@
               template =
                 `
             <div class='notification-approval'>
-              <h1>Your request has been canceled</h1>
-              <h4>Click to return to the home page. If you click back immediately you will lose data </h4>
+              <h1>Bài viết của bạn đã bị hủy</h1>
+              <h4>Nhấn vào đây để trở về trang chủ. Nếu bạn nhấp lại ngay lập tức, bạn sẽ mất dữ liệu  </h4>
               <button data-id = ${dataOwner[0]._id} onClick=handleWaiting.call(this) id="refresh-approve" type="button" class="btn btn-secondary btn-rounded">Quay lại trang</button>
        
               </div>
@@ -57,17 +57,23 @@
               setTimeout(function () {
                 location.reload()
               }, 1000 * 30);
-              $('body').attr('style', 'height: 100vh;background: url(../background-login-logout.gif);background-size: cover;background-repeat: no-repeat;background-position-y: -29px;background-position-x: -5px;');
+              $('body').attr('style', `height: 100vh;background: url(../background-login-logout.gif);background-size: cover;background-repeat: no-repeat;background-position-y: -29px;background-position-x: -5px;
+                display: flex;
+                    align-items: center;
+                    justify-content: center; 
+          `);
               $('.notification-approval').attr('style', `
-            color : white; 
+                  color : white;
+                  text-align : center;
+                  
           `);
 
             }
             else {
               template =
                 `<div class='notification-approval'>
-              <h1>Your request has been accepted</h1>
-                  <h4>Click to return to the home page. If you click back immediately you will lose data </h4>
+                <h1>Your request has been accepted</h1>
+                  <h4>Nhấn vào đây để trở về trang chủ. Nếu bạn nhấp lại ngay lập tức, bạn sẽ mất dữ liệu  </h4>
                   <button data-id = ${dataOwner[0]._id} onClick=handleWaiting.call(this) id="refresh-approve" type="button" class="btn btn-secondary btn-rounded">Quay lại trang</button>
        
               </div>
@@ -76,11 +82,16 @@
               setTimeout(function () {
                 location.reload()
               }, 1000 * 30);
-              $('body').attr('style', 'height: 100vh;background: url(../background-login-logout.gif);background-size: cover;background-repeat: no-repeat;background-position-y: -29px;background-position-x: -5px;');
-              $('.notification-approval').attr('style', `
-            color : white; 
+              $('body').attr('style', `height: 100vh;background: url(../background-login-logout.gif);background-size: cover;background-repeat: no-repeat;background-position-y: -29px;background-position-x: -5px;
+                display: flex;
+                    align-items: center;
+                    justify-content: center; 
           `);
-
+              $('.notification-approval').attr('style', `
+                  color : white;
+                  text-align : center;
+                  
+          `);
             }
           } else {
             window.location.href = '/';

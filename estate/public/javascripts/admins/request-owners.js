@@ -6,6 +6,7 @@ function getData() {
   }).then((result) => {
     if (!result.error && result.status === 200) {
       var { dataOwner } = result;
+      console.log(dataOwner);
       dataOwner.forEach((element) => {
         var template
         if (element.status === 'pending') {
@@ -76,6 +77,6 @@ function handleCancel() {
       $(this).parent().empty();
     }
   }).catch((error) => {
-    
+
   })
 }
