@@ -123,6 +123,7 @@ form.sign-in-form {
 
 .input-field.col-sm-6.col-xs-12 {
     max-width: 45%;
+    border-left: 6px solid red !important;
 }
 
 .input-field.col-6 {

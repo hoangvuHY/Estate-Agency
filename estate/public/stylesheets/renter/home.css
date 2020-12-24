@@ -271,14 +271,20 @@
   padding-bottom: 5px !important;
 }
 .info-article > div{
-  padding: 0px 0px !important;
+  white-space: nowrap;
   font-family: Alatsi;
   font-size: 17px;
 }
 .info-article > .col-12{
-  height: 60px !important;
+  height: 40px !important;
   display: flex;
   align-items: center;
+  
+}
+
+.info-article > .col-12 > i{
+ 
+  padding-right: 5px;
   
 }
 
