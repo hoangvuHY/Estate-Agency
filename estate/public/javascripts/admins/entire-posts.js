@@ -368,7 +368,7 @@ function handleEditAccept() {
     $('.content-edit-accept').append(template);
     $(".images-detail").empty();
     dataPost.images_room.forEach((image) => {
-      var _image = `<img src="${image}" alt="Not Image" class="text-center w-100 img-thumbnail col-3">`
+      var _image = `<img src="${image}" style="max-width: 25%!important" alt="Not Image" class="text-center w-100 img-thumbnail col-3">`
       $(".images-detail").append(_image);
     })
   }).catch((error) => {
