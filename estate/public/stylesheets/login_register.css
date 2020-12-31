@@ -35,7 +35,7 @@ input {font-family: 'Fira Sans', sans-serif;}
 
 body,html {
     height: 100vh;
-    background: url('https://lh3.googleusercontent.com/proxy/3VD_ktgld8QnXeVXqkRygS3nRRo7dq0MUzEw-_xUPy2Z1RurtzQ4UJ4Vw_uGYrjVT2jASUXqiRVvJC0eFQ63eUMKEwfw6qxhnJmb8srueoWelw');
+    background: url('../background-login-logout.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: -29px;
