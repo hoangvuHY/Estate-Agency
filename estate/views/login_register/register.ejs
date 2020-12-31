@@ -1,0 +1,79 @@
+<%include ../header-footer/header %>
+  <div class="background-gradient"></div>
+  <link rel="stylesheet" href="/stylesheets/login_register.css" /> 
+
+  <div class="container">
+    <form class="sign-up-form row siginUp">
+      <h2 class="title">Register</h2>
+      <div class="input-field  col-sm-6 col-xs-12">
+        <i class="far fa-user"></i>
+        <input placeholder="Nhập tên của bạn" type="text" id="name">
+      </div>
+      <div class="input-field  col-sm-6 col-xs-12">
+        <i class="fas fa-birthday-cake"></i>
+        <input placeholder="Nhập ngày sinh của bạn" type="date" id="birthday">
+      </div>
+      <div class="input-field    col-sm-6 col-xs-12">
+        <i class="fas fa-phone-square"></i>
+        <input placeholder="Nhập số điện thoại của bạn" type="number" id="phone">
+      </div>
+      <div class="input-field    col-sm-6 col-xs-12">
+        <i class="fas fa-map-marker-alt"></i>
+        <input placeholder="Nhập địa chỉ của bạn" type="text" id="address">
+      </div>
+      <div class="input-field    col-sm-6 col-xs-12">
+        <i class="fas fa-id-card"></i>
+        <input placeholder="Nhập số CMTND của bạn" type="number" id="identification">
+      </div>
+      <div class="input-field    col-sm-6 col-xs-12">
+        <i class="fas fa-user"></i>
+        <input placeholder="Nhập username của bạn" type="text" id="username">
+      </div>
+      <div class="input-field    col-sm-6 col-xs-12">
+        <i class="fas fa-lock"></i>
+        <input placeholder="Nhập mật khẩu của bạn" type="password" id="passwordRegister">
+      </div>
+      <div class="input-field   col-sm-6 col-xs-12 ">
+        <i class="fas fa-lock"></i>
+        <input placeholder="Nhập lại mật khẩu của bạn" type="password" id="confirmPassword">
+      </div>
+      <div class="input-field    col-sm-6 col-xs-12">
+        <i class="fas fa-envelope"></i>
+        <input placeholder="Nhập email của bạn" type="email" id="emailRegister">
+      </div>
+      <div class="input-field    col-sm-6 col-xs-12">
+        <i class="fas fa-user-tag"></i>
+        <select name="role" id="role">
+          <option value="user">Người thuê</option>
+          <option value="owner">Chủ trọ</option>
+        </select>
+        <!-- <input type="password" placeholder="Role K lam o day" /> -->
+      </div>
+      <input type="submit" id="btn-register" class="btn" value="Register" />
+      <p class="social-text">
+        <span>
+          Login here
+        </span>
+        <a href="/login">Login</a>
+      </p>
+
+      <div class="social-media">
+        <a href="#" class="social-icon">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <%include ../header-footer/footer %>
+
+    <script src="/javascripts/login_register.js"></script>

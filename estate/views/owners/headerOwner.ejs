@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Trang Chủ trọ</title>
+
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <meta name="viewport" content="width=device-width" />
+
+
+  <!-- Bootstrap core CSS     -->
+  <link href="../stylesheets/owners-css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Animation library for notifications   -->
+  <link href="../stylesheets/owners-css/animate.min.css" rel="stylesheet" />
+
+  <!--  Light Bootstrap Table core CSS    -->
+  <link href="../stylesheets/owners-css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+
+  <!--     Fonts and icons     -->
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css">
+
+  <!--  CSS for Demo Purpose, don't include it in your project     -->
+  <link href="../stylesheets/owners-css/demo.css" rel="stylesheet" />
+
+</head>
+
+<body style="width: 100vh;">
+
+
+  <div class="modal fade" id="btn-edit" tabindex="-1" role="dialog" aria-labelledby="btn-editTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body content-update text-center w-50 m-auto">
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper " style="  width: 202%;  padding-left: 14px;">
+    <div class="sidebar" style="z-index: 10;" data-color="yellow" data-image="../img/owners-img/sidebar-5.jpg">
+
+      <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
+
+
+      <div class="sidebar-wrapper">
+        <div class="logo">
+          <a href="/" class="simple-text">
+            Trang Chủ trọ
+          </a>
+        </div>
+
+        <ul class="nav">
+          <li>
+            <a href="/">
+              <i style="font-size: 20px;" class="far fa-list-alt"></i>
+              <p>Danh sách bài đăng</p>
+            </a>
+          </li>
+          <li>
+            <a href="/owners/poster-room">
+              <i style="font-size: 20px;" class="fas fa-house-user"></i>
+              <p>Đăng bài</p>
+            </a>
+          </li>
+          <li>
+            <a href="/profile-owner">
+              <i style="font-size: 20px;" class="fas fa-user"></i>
+              <p>Tài khoản</p>
+            </a>
+          </li>
+          <li>
+            <a href="/chat-room">
+              <i style="font-size: 20px;" class="fas fa-sms"></i>
+              <p>Nhắn tin</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-panel">
+      <nav class="navbar navbar-default navbar-fixed">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Icons</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+              <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-dashboard"></i>
+                  <p class="hidden-lg hidden-md">Dashboard</p>
+                </a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-globe"></i>
+                  <b class="caret hidden-sm hidden-xs"></b>
+                  <span class="notification hidden-sm hidden-xs">5</span>
+                  <p class="hidden-lg hidden-md">
+                    <!-- 5 Notifications -->
+                    <b class="caret"></b>
+                  </p>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Notification 1</a></li>
+                  <li><a href="#">Notification 2</a></li>
+                  <li><a href="#">Notification 3</a></li>
+                  <li><a href="#">Notification 4</a></li>
+                  <li><a href="#">Another notification</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="">
+                  <i class="fa fa-search"></i>
+                  <p class="hidden-lg hidden-md">Search</p>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="">
+                  <p>Account</p>
+                </a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <p>
+                    Dropdown
+                    <b class="caret"></b>
+                  </p>
+
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">
+                  <p id="logout">Đăng xuất</p>
+                </a>
+              </li>
+              <li class="separator hidden-lg hidden-md"></li>
+            </ul>
+          </div>
+        </div>
+      </nav>

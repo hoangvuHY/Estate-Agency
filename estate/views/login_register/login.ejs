@@ -1,0 +1,56 @@
+<%include ../header-footer/header %>
+<div class="background-gradient"></div>
+<link rel="stylesheet" href="/stylesheets/login_register.css" />
+<div class="container">
+  <div class="forms-container">
+    <div class="signin-signup">
+      <form class="sign-in-form">
+        <h2 class="title">Log in</h2>
+        <div class="input-field  ">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <input type="email" id="email" placeholder="Enter Your Email">
+        </div>
+        <div class="input-field  ">
+          <i class="fas fa-lock" aria-hidden="true"></i>
+          <input type="password" id="password" placeholder="Enter Your Password">
+        </div>
+        <input type="submit" value="Login" class="btn solid" id="btn-login">
+        <p class="social-text"></p>
+        <div class="social-media">
+          <a href="#" class="social-icon">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          </a> 
+          <a href="#" class="social-icon">
+            <i class="fab fa-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-google" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3>New here ?</h3>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+          ex ratione. Aliquid!
+        </p>
+        <a href="/register" class="btn transparent" id="sign-up-btn">
+          Register
+        </a>
+      </div> 
+    </div>
+    
+  </div>
+</div>
+<%include ../header-footer/footer %>
+
+<script src="/javascripts/login_register.js"></script>

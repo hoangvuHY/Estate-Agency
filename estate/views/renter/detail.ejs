@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
+  <link rel="shortcut icon" type="image/png" href="">
+  <!-- Thu vien animate -->
+  <link rel="stylesheet" href="/stylesheets/animate.min.css">
+  <!-- Khai bao fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <!-- Khai bao google font-->
+  <link
+    href='https://fonts.googleapis.com/css2?family=Chewy&family=Fira+Sans+Extra+Condensed&family=Asap+Condensed&family=Roboto+Condensed&family=Bungee+Inline&family=VT323&family=Fira+Sans+Extra+Condensed&family=Barlow+Condensed&family=IBM+Plex+Sans&family=Fira+Sans+Extra+Condensed&family=Bangers&family=Bungee+Inline&family=Asap&family=Pangolin&family=Francois+One&family=Cabin&family=Special+Elite&family=Sawarabi+Gothic&family=Alatsi&family=Roboto+Condensed&family=PT+Sans+Narrow&family=Kanit&family=Fira+Sans+Condensed&display=swap'
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Oswald&family=Roboto&family=Source+Sans+Pro&display=swap"
+    rel="stylesheet">
+  <!-- Thu vien jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap 4-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <!-- Khai báo css của trang-->
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/renter/detail.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/ekko-lightbox.css">
+  <title>Student Housing</title>
+</head>
+
+<body>
+  <!-- Thanh đăng nhập, đăng ký -->
+  <div class="bg-dark" id="parent-login-subcrible">
+    <div class="container text-right p-1" id="tab-login-subcrible">
+
+    </div>
+  </div>
+
+  <!-- Menu các chuyên mục -->
+  <div id="menu" class="sticky-top">
+    <div class="container d-flex justify-content-center align-items-center p-1">
+      <div class="row w-100 w-100">
+        <div class="col-md-9 col-lg-5">
+          <div id="logo-sologan" class="d-flex justify-content-center align-items-center">
+            <img id="logo" src="../images/logo.png" alt="">
+            <div id='sologan'>I TRUST YOU 3000</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-7 p-0">
+          <div id="menus" class="h-100">
+            <nav class="navbar navbar-expand-lg pr-0 h-100 navbar-light">
+              <div class="navbar-brand d-block d-lg-none">Menu</div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav d-flex w-100 justify-content-end">
+                  <a class="nav-item nav-link" href="/">TRANG CHỦ</a>
+                  <a class="nav-item nav-link" href="/list">PHÒNG TRỌ</a>
+                  <a class="nav-item nav-link" href="#">TIN TỨC VÀ SỰ KIỆN</a>
+                  <a class="nav-item nav-link" href="#">TÀI KHOẢN</a>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row parent">
+
+      <div class="col-md-4 child1 wow bounceInLeft">
+
+        <div class="row image-group">
+          <!--<a href="/public/images/vu.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-12">
+                <img src="/public/images/vu.jpg" class="img-fluid rounded">
+                </a>
+                <a href="/public/images/tuan.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-6">
+                <img src="/public/images/tuan.jpg" class="img-fluid rounded">
+                </a>
+                <a href="/public/images/thuan1.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-6">
+                <img src="/public/images/thuan1.jpg" class="img-fluid rounded">
+                </a> -->
+        </div>
+
+        <div class="info-owner">
+          <h1 class="text-center">THÔNG TIN LIÊN HỆ</h1>
+          <div class="row">
+            <div class="col-5 color">Họ tên</div>
+            <div class="col-7" id="name-owner"></div>
+          </div>
+          <div class="row">
+            <div class="col-5 color">Điện thoại</div>
+            <div class="col-7" id="telephone-owner"></div>
+          </div>
+          <div class="row">
+            <div class="col-5 color">Email</div>
+            <div class="col-7" id="email-owner"></div>
+          </div>
+          <div class="row">
+            <div class="col-5 color">Ngày đăng</div>
+            <div class="col-7" id="date-start"></div>
+          </div>
+          <div class="row">
+            <div class="col-5 color">Ngày hết hạn</div>
+            <div class="col-7" id="date-end"></div>
+          </div>
+
+        </div>
+
+        <div class="report">
+          <h1 class="text-center"><i class="fas fa-exclamation-triangle"></i> BÁO CÁO TIN GIẢ</h1>
+          <div>
+            <label class="color">Nhập tên của bạn</label>
+            <input type="text" class="w-75">
+          </div>
+          <div>
+            <label class="color">Số điện thoại của bạn</label>
+            <input type="text" class="w-75">
+          </div>
+          <div>
+            <label class="color">Email của bạn</label>
+            <input type="text" class="w-75">
+          </div>
+          <div>
+            <label class="color">Nội dung báo cáo</label>
+            <textarea class="w-75"></textarea>
+          </div>
+          <div class="send" id="send-report">SEND</div>
+        </div>
+
+      </div>
+
+
+      <div class="col-md-8 child2 wow bounceInRight">
+
+        <div class="title">
+          <h1 id="name">PHÒNG TRỌ</h1>
+          <div class="color"><i class="fas fa-map-marker-alt"></i><span id="address"></span></div>
+          <div class="color"><i class="fas fa-home"></i><span id="status"></span></div>
+        </div>
+
+        <div class="info">
+          <h1>TỔNG QUÁT</h1>
+          <div class="row">
+            <div class="col-6 col-md-3 color"><i class="fas fa-shield-alt"></i>An ninh</div>
+            <div class="col-6 col-md-3" id="an-ninh"></div>
+            <div class="col-6 col-md-3 color"><i class="far fa-square"></i>Diện tích</div>
+            <div class="col-6 col-md-3"><span id="dien-tich"></span> m<sup>2</sup></div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 col-md-3 color"><i class="fas fa-bolt"></i>Tiền điện</div>
+            <div class="col-6 col-md-3"><span id="tien-dien"></span> VNĐ/kWh</sup></div>
+            <div class="col-6 col-md-3 color"><i class="fas fa-tint"></i>Tiền nước</div>
+            <div class="col-6 col-md-3"><span id="tien-nuoc"></span> VNĐ/m<sup>3</sup></div>
+          </div>
+          <div class="row">
+            <div class="col-6 col-md-3 color"><i class="fab fa-houzz"></i>Số phòng</div>
+            <div class="col-6 col-md-3"><span id="so-phong"></span> phòng</div>
+            <div class="col-6 col-md-3 color"><i class="fas fa-money-bill-wave-alt"></i>Tiền thuê</div>
+            <div class="col-6 col-md-3"><span id="tien-thue"></span> VNĐ</div>
+          </div>
+        </div>
+
+        <div class="utility">
+          <h1>TIỆN ÍCH</h1>
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2 col-4" id="ban-cong">
+              <img class="img-fluid w-50" src="/images/ban-cong.png" alt="">
+            </div>
+            <div class="col-sm-2 col-4" id="dieu-hoa">
+              <img class="img-fluid w-50 " src="/images/dieu-hoa.png" alt="">
+            </div>
+            <div class="col-sm-2 col-4" id="binh-nong-lanh">
+              <img class="img-fluid w-50" src="/images/binh-nong-lanh.png" alt="">
+            </div>
+            <div class="col-sm-2 col-4" id="tu-lanh">
+              <img class="img-fluid w-25" src="/images/tu-lanh.png" alt="">
+            </div>
+            <div class="col-sm-2 col-4" id="may-giat">
+              <img class="img-fluid w-50" src="/images/may-giat.png" alt="">
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+
+        </div>
+
+        <div class="map">
+          <h1>BẢN ĐỒ</h1>
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14895.444953462416!2d105.7827076!3d21.0382375!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5d0313a3bfdc4f37!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4csIMSQ4bqhaSBo4buNYyBRdeG7kWMgZ2lhIEjDoCBO4buZaQ!5e0!3m2!1svi!2s!4v1608538791545!5m2!1svi!2s"
+              width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+              tabindex="0"></iframe>
+          </div>
+        </div>
+
+        <div class="bar">
+          <div class="row">
+            <div class="col-4 color">
+              <i class="far fa-heart"></i><span>Yêu thích</span>
+            </div>
+            <div class="col-4 color">
+              <i class="far fa-comment-alt"></i><span>Bình luận</span>
+            </div>
+            <div class="col-4 color">
+              <i class="fas fa-share"></i><span>Chia sẻ</span>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="comment">
+              <img src="/public/images/user-avatar.png" alt="">
+              <div class="my-comment w-100">
+                <div>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <textarea placeholder="Viết bình luận của bạn công khai"></textarea>
+                <div class="send" id="send-comment">SEND</div>
+              </div>
+
+            </div>
+
+            <div class="comment">
+              <img src="/public/images/user-avatar.png" alt="">
+              <div class="row">
+                <div class="col-12">Đàm Anh Tuấn</div>
+                <div class="col-12">
+                  <div class="vote">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                  </div>
+                  <div class="time">21/12/2020</div>
+                </div>
+
+
+
+                <div class="col-12">Nhà trọ này sịn sò thật !</div>
+              </div>
+            </div>
+
+            <div class="comment">
+              <img src="/public/images/user-avatar.png" alt="">
+              <div class="row">
+                <div class="col-12">Đàm Anh Tuấn</div>
+                <div class="col-12">
+                  <div class="vote">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                  </div>
+                  <div class="time">21/12/2020</div>
+                </div>
+
+
+
+                <div class="col-12">Nhà trọ này sịn sò thật !</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <% include footer %>
+
+    <script src="/javascripts/renter/detail.js"></script>
+    <script src="/javascripts/ekko-lightbox.min.js"></script>

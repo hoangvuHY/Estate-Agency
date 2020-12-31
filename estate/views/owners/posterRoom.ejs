@@ -1,0 +1,197 @@
+<%include ./headerOwner %>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    label.hot-cold-bottles {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    label.general-owner {
+      float: left;
+    }
+
+
+    label.general-owner+input {
+      margin-left: 180px;
+    }
+
+    input#general-owner+span {
+      width: 100px;
+      display: inline-block;
+    }
+
+    input,
+    select {
+      width: 75% !important;
+      margin: auto;
+    }
+
+    .payment-post-none {
+      display: none;
+    }
+
+    .well {
+      background: transparent;
+      border: transparent;
+      outline: none;
+      box-shadow: none;
+    }
+  </style>
+  <div class="text-center w-50 m-auto">
+    <div class="form-group">
+      <label for="address_room ">Địa chỉ phòng trọ *</label>
+      <input type="text" class="form-control" name="address_room" id="address_room " aria-describedby="helpId"
+        placeholder="House number - Street - Ward - District - City" required>
+      <small id="error-address_room" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <label for="near_places ">Địa điểm công cộng gần đó </label>
+
+      <input type="text" class="form-control" name="near_places" id="near_places" aria-describedby="helpId"
+        placeholder="Enter Near any public places">
+
+      <small id="error-near_places" class="form-text text-muted"></small>
+
+    </div>
+    <div class="form-group">
+      <label for="kind_room">Loại phòng </label>
+      <select class=" form-control" name="kind_room" id="kind_room">
+        <option>Phòng Trọ </option>
+        <option>Trung cư mini </option>
+        <option>Nhà Nguyên Căn </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="number_room">Số phòng </label>
+      <input type="number" class="form-control" name="number_room" id="c" aria-describedby="helpId"
+        placeholder="Enter Number of Room">
+      <small id="error-number_room" class="form-text text-muted"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Giá </label>
+      <input type="text" class="form-control" name="price" id="price" aria-describedby="helpId"
+        placeholder="Enter Near any public price month/quarter/year">
+      <small id="error-price" class="form-text text-muted"></small>
+    </div>
+
+
+    <div class="form-group">
+      <label for="area">Diện tích </label>
+      <input type="number" class="form-control" name="area" id="area" aria-describedby="helpId"
+        placeholder="Enter Area">
+      <small id="error-area" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <label for="general_owner">Chung chủ </label>
+      <select class="form-control" name="general_owner" id="general_owner">
+        <option>Chung chủ </option> 
+        <option>Không chung chủ</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <h2 class="col-sm-12">Cơ sở vật chất </h2>
+        <div class="col-sm-6">
+          <label for="bathroom">Phòng Tắm </label>
+          <select class="form-control" name="bathroom" id="bathroom">
+            <option>Khép kín </option>
+            <option>Chung </option>
+          </select>
+        </div><!-- ennd col-6 -->
+        <div class="col-sm-6">
+          <label for="hot_cold_bottles">Bình nóng lạnh </label>
+          <select class="form-control" name="hot_cold_bottles" id="hot_cold_bottles">
+            <option>Có </option>
+            <option>Không </option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+          <label for="kitchen">Nhà bếp </label>
+          <select class="form-control" name="kitchen" id="kitchen">
+            <option>Khép kín </option>
+            <option>Chung </option>
+          </select>
+        </div><!-- ennd col-6 -->
+        <div class="col-sm-6">
+          <label for="cooking">Nấu ăn </label>
+          <select class="form-control" name="cooking" id="cooking">
+            <option>Có </option>
+            <option>Không </option>
+          </select>
+        </div><!-- ennd col-6 -->
+        <div class="col-sm-6">
+          <label for="conditioning">Điều hòa </label>
+          <select class="form-control" name="conditioning" id="conditioning">
+            <option>Có </option>
+            <option>Không </option>
+          </select>
+        </div><!-- ennd col-6 -->
+        <div class="col-sm-6">
+          <label for="balcony">Ban công </label>
+          <select class="form-control" name="balcony" id="balcony">
+            <option>Có </option>
+            <option>Không </option>
+          </select>
+        </div><!-- ennd col-6 -->
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-6">
+              <label for="electricity_price">Giá điện </label>
+              <input type="number" class="form-control" name="electricity_price" id="electricity_price "
+                aria-describedby="helpId" placeholder="Electricity Price ">
+              <small id="error-electricity_price" class="form-text text-muted"></small>
+            </div>
+            <div class="col-sm-6">
+              <label for="water_price">Giá nước </label>
+              <input type="number" class="form-control" name="water_price" id="water_price " aria-describedby="helpId"
+                placeholder="Water Price ">
+              <small id="error-water_price" class="form-text text-muted"></small>
+            </div>
+          </div>
+        </div><!-- ennd col-6 -->
+        <div class="col-sm-6">
+          <label for="other_utility">Tiện ích khác </label>
+          <input type="text" class="form-control" name="other_utility" id="other_utility " aria-describedby="helpId"
+            placeholder="Tủ lạnh, Máy giặt">
+          <small id="error-other_utility" class="form-text text-muted"></small>
+        </div><!-- ennd col-6 -->
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="image-room">Ảnh phòng </label>
+      <form id="image_room" method="post" action="/owners/upload-image" class="dropzone"></form>
+      <!-- 
+    <input type="file" class="form-control-file dropzone" name="image-room" id="image-room" placeholder="Images"
+      aria-describedby="image-room"> 
+    -->
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <h2 class="col-sm-12">Thông tin chủ trọ </h2>
+        <span class="infoOwner">
+
+        </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="time_post">Thời gian bài đăng </label>
+      <select class="form-control" name="time_post" id="time_post">
+        <option>7</option>
+        <option>30 </option>
+        <option>60</option>
+        <option>365</option>
+      </select>
+    </div>
+    <div class="form-group payment-content">
+
+    </div>
+    <button class="btn btn-primary payment-post">Thanh toán </button>
+  </div>
+
+  <%include ./footerOwner %>
+    <script src="../javascripts/owners-js/post-room.js"></script>

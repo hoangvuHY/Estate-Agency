@@ -1,0 +1,409 @@
+<%include ../header-footer/header %>
+<link rel="stylesheet" href="../stylesheets/homeAdmin.css">
+<!-- Modal Add -->
+<div class="modal fade" id="add_room" tabindex="-1" role="dialog" aria-labelledby="add_roomTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add A New Room</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <form id="upload-widget" method="post" action="/upload" class="dropzone"></form> -->
+
+        <div class="text-center m-auto">
+          <div class="form-group">
+            <label for="address_room ">Address Room *</label>
+            <input type="text" class="form-control" name="address_room" id="address_room " aria-describedby="helpId"
+              placeholder="House number - Street - Ward - District - City" required>
+            <small id="error-address_room" class="form-text text-muted"></small>
+          </div>
+          <div class="form-group">
+            <label for="near_places ">Near any public places</label>
+
+            <input type="text" class="form-control" name="near_places" id="near_places" aria-describedby="helpId"
+              placeholder="Enter Near any public places">
+
+            <small id="error-near_places" class="form-text text-muted"></small>
+
+          </div>
+          <div class="form-group">
+            <label for="kind_room">Kind of Room</label>
+            <select class="form-control" name="kind_room" id="kind_room">
+              <option>Motel Room</option>
+              <option>Mini apartment</option>
+              <option>Whole house</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="number_room">Number of Room</label>
+            <input type="number" class="form-control" name="number_room" id="c" aria-describedby="helpId"
+              placeholder="Enter Number of Room">
+            <small id="error-number_room" class="form-text text-muted"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="price">Prices</label>
+            <input type="text" class="form-control" name="price" id="price" aria-describedby="helpId"
+              placeholder="Enter Near any public price month/quarter/year">
+            <small id="error-price" class="form-text text-muted"></small>
+          </div>
+
+
+          <div class="form-group">
+            <label for="area">Area</label>
+            <input type="number" class="form-control" name="area" id="area" aria-describedby="helpId"
+              placeholder="Enter Area">
+            <small id="error-area" class="form-text text-muted"></small>
+          </div>
+          <div class="form-group">
+            <label for="general_owner">General owner</label>
+            <select class="form-control" name="general_owner" id="general_owner">
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <h2 class="col-sm-12">Physical facilities</h2>
+              <div class="col-sm-6">
+                <label for="bathroom">Bathroom *</label>
+                <select class="form-control" name="bathroom" id="bathroom">
+                  <option>Closed</option>
+                  <option>General</option>
+                </select>
+              </div><!-- ennd col-6 -->
+              <div class="col-sm-6">
+                <label for="hot_cold_bottles">Hot and cold bottles *</label>
+                <select class="form-control" name="hot_cold_bottles" id="hot_cold_bottles">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div>
+              <div class="col-sm-6">
+                <label for="kitchen">Kitchen Room</label>
+                <select class="form-control" name="kitchen" id="kitchen">
+                  <option>Closed</option>
+                  <option>General</option>
+                </select>
+              </div><!-- ennd col-6 -->
+              <div class="col-sm-6">
+                <label for="cooking">Cooking</label>
+                <select class="form-control" name="cooking" id="cooking">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div><!-- ennd col-6 -->
+              <div class="col-sm-6">
+                <label for="conditioning">Air Conditioning</label>
+                <select class="form-control" name="conditioning" id="conditioning">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div><!-- ennd col-6 -->
+              <div class="col-sm-6">
+                <label for="balcony">Balcony</label>
+                <select class="form-control" name="balcony" id="balcony">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div><!-- ennd col-6 -->
+              <div class="col-sm-6">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="electricity_price">Electricity Price</label>
+                    <input type="number" class="form-control" name="electricity_price" id="electricity_price "
+                      aria-describedby="helpId" placeholder="Electricity Price ">
+                    <small id="error-electricity_price" class="form-text text-muted"></small>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="water_price">Water Price</label>
+                    <input type="number" class="form-control" name="water_price" id="water_price "
+                      aria-describedby="helpId" placeholder="Water Price">
+                    <small id="error-water_price" class="form-text text-muted"></small>
+                  </div>
+                </div>
+              </div><!-- ennd col-6 -->
+              <div class="col-sm-6">
+                <label for="other_utility">Other Utility</label>
+                <input type="text" class="form-control" name="other_utility" id="other_utility "
+                  aria-describedby="helpId" placeholder="Refrigerator / Washing machine / Bed cabinet etc...">
+                <small id="error-other_utility" class="form-text text-muted"></small>
+              </div><!-- ennd col-6 -->
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="image-room">Image Room</label>
+            <form id="image_room" method="post" action="/owners/upload-image" class="dropzone"></form>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <h2 class="col-sm-12">Contact information</h2>
+              <span class="infoOwner">
+
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="time_post">Time the post shows up</label>
+            <select class="form-control" name="time_post" id="time_post">
+              <option>7</option>
+              <option>30 </option>
+              <option>90</option>
+              <option>365</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary save_new_room">Save New Room</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal edit -->
+<div class="modal fade" id="edit-accept" tabindex="-1" role="dialog" aria-labelledby="edit-acceptTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Post Approve</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body content-edit-accept text-center">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="topAdmin">
+  <div class="row">
+    <div class="col-sm-4   ">
+      <img class="  emblem" src="https://nodejsrestaurantdashboard.firebaseapp.com/assets/img/logo.png" alt="">
+    </div>
+    <div class="col-sm-8  ">
+      <div class="row">
+        <div class="col-sm-6 offset-sm-6">
+          <div class="icon">
+            <span class="bellIcon">
+              <i class=" far fa-bell"></i>
+            </span>
+            <span class="commentIcon">
+              <i class="far fa-comments"></i>
+            </span>
+            <span class="signOutIcon">
+              <i class="fas fa-sign-out-alt"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="contentAdmin">
+  <div class="row">
+    <div class=" leftContent">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+          aria-controls="v-pills-home" aria-selected="true">
+          <i class="fas fa-home"></i>
+          <span> Home</span>
+        </a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+          aria-controls="v-pills-profile" aria-selected="false">
+          <i class="far fa-sticky-note"></i>
+          <span> Categories</span>
+
+        </a>
+        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+          aria-controls="v-pills-messages" aria-selected="false">
+          <i class="fas fa-list"></i>
+          <span> Menu Items</span>
+        </a>
+        <a class="nav-link chat-room"  href="/chat-room">
+          <i class="fas fa-sms"></i>
+          <span> Chat Room</span>
+        </a>
+        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+          aria-controls="v-pills-settings" aria-selected="false">
+          <i class="fas fa-bars"></i>
+          <span> Orders</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 rightContent">
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="titleCatagories">
+                <h5> Home</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="titleCatagories">
+                <h5> Categories</h5>
+                <em> <a href="#v-pills-home">Home</a> -> Categories</em>
+              </div>
+            </div>
+          </div>
+          <div class="row buttomCatagories">
+            <div class="detailButtom">
+              <div class="col-sm-12 titleCatagoriesDetail">Categories Details</div>
+              <button type="button" class=" offset-10 col-sm-2 btn btn-primary" data-toggle="modal"
+                data-target="#add_room">
+                <i class="fas fa-plus"></i> Add a new room
+              </button>
+              <div class="col-sm-12 catagoriesDetailButtom">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Creator</th>
+                      <th>Role</th>
+                      <th>Date Create</th>
+                      <th>Date Expire</th>
+                      <th>Status</th>
+                      <th>Rent Status</th>
+                      <th>Restore</th>
+                      <th>Handle</th>
+                      <th>Han dle Hiring</th>
+                    </tr>
+                  </thead>
+                  <tbody class="content-all-posts">
+
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="titleCatagories">
+                <h5> Menu Items</h5>
+                <em> <a href="#v-pills-home">Home</a> -> Menu Items</em>
+              </div>
+            </div>
+          </div>
+          <div class="row buttomCatagories">
+            <div class="detailButtom">
+              <div class="col-sm-12 titleCatagoriesDetail">Items Details</div>
+              <a href="#" class=" offset-10 col-sm-2 catagoriesDetailMiddle ">
+                <i class="fas fa-plus"></i>
+                Add New Item
+              </a>
+              <div class="col-sm-12 catagoriesDetailButtom">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Offers</th>
+                      <th>Price</th>
+                      <th>Handle</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>vegetable salad</th>
+                      <td>Yes</td>
+                      <td>
+                        $14
+                      </td>
+                      <td>
+                        <span class="edit "><i class=" fas fa-edit"></i></span>
+                        <span class="delete  "><i class="fas fa-trash-alt"></i></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>fruit salad</th>
+                      <td>Yes</td>
+                      <td>
+                        $123
+                      </td>
+                      <td>
+                        <span class="edit "><i class=" fas fa-edit"></i></span>
+                        <span class="delete  "><i class="fas fa-trash-alt"></i></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Chicken Salad with Arugula </th>
+                      <td>No</td>
+                      <td>
+                        $11
+                      </td>
+                      <td>
+                        <span class="edit "><i class=" fas fa-edit"></i></span>
+                        <span class="delete  "><i class="fas fa-trash-alt"></i></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="titleCatagories">
+                <h5> Owners</h5>
+                <em> <a href="#v-pills-home">Home</a> -> Owners Details</em>
+              </div>
+            </div>
+          </div>
+          <div class="row buttomCatagories">
+            <div class="detailButtom">
+              <div class="col-sm-12 titleCatagoriesDetail">Owners Details</div>
+              <a href="#" class=" offset-10 col-sm-2 catagoriesDetailMiddle ">
+                <i class="fas fa-plus"></i>
+                Add New Item
+              </a>
+              <div class="col-sm-12 catagoriesDetailButtom">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Address</th>
+                      <th>Phone</th>
+                      <th>Username</th>
+                      <th>Status</th>
+                      <th>Handle</th>
+
+                    </tr>
+                  </thead>
+
+                  <tbody id="detailOwners">
+
+
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%include ../header-footer/footer %>
+<script src="../javascripts/homeAdmin.js"></script>
