@@ -1,7 +1,9 @@
 /*!
  * (c) Mimin Admin Page v1.0
  */
-
+ .modal-v1 .modal-body span{
+  color: red;
+}
 body {
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 13px;

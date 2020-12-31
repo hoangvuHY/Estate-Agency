@@ -135,7 +135,7 @@ function handleSubmitPost() {
   }).then((result) => {
     if (!result.error && result.status === 200) {
       alert(result.message);
-      window.location.href = '/table';
+      window.location.href = '/';
     } else {
       alert(result.message);
       window.location.href = '/owners/poster-room';

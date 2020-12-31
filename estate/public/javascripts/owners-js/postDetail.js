@@ -1,4 +1,4 @@
-
+ 
 getData();
 function getData() {
   $.ajax({
@@ -27,6 +27,7 @@ function getData() {
                       <i class="fas fa-trash-alt"></i>
                     </button>
                   </td>
+                  <td><td>
                 <tr> 
         `;
       } else if (element.status === 'expired') {
@@ -43,6 +44,7 @@ function getData() {
               <i class="fas fa-external-link-square-alt"></i>
             </button>
           </td>
+          
         <tr> 
       `;
       } else if (element.status === 'active') {
@@ -56,10 +58,12 @@ function getData() {
                   <td>${element.status}</td>  
                   <td>${element.rent_status}</td>  
                   <td></td>  
+                  <td></td>
+                  <td></td>
                 <tr>
           `;
         } else {//Not yet hired 
-
+ 
           template = `  
           <tr>
             <td>${element.address_room}</td>
@@ -71,7 +75,7 @@ function getData() {
             <td></td>  
           <tr>
           `;//Not yet hired 
-
+ 
         }
       } else {
         template = `
@@ -104,8 +108,8 @@ function getData() {
         `;//Not yet hired 
       }
       $("tbody.infoPost").append(template);
-
-
+ 
+ 
     })
   }).catch((error) => {
     console.log(error);
@@ -173,12 +177,12 @@ function handleExtend() {
   
  <div>
    <div class="form-group">
-     <label for="address_room ">Address Room *</label>
+     <label for="address_room ">Địa chỉ phòng trọ *</label>
      <input value='${dataPost.address_room}' disabled type="text" class="form-control" name="address_room" id="address_room ">
      <small id="error-address_room" class="form-text text-muted"></small>
    </div>
    <div class="form-group">
-     <label for="near_places ">Near any public places</label>
+     <label for="near_places ">Địa điểm công cộng gần đó </label>
  
      <input value='${dataPost.near_places}' disabled type="text" class="form-control" name="near_places" id="near_places"
        aria-describedby="helpId" placeholder="Enter Near any public places">
@@ -187,7 +191,7 @@ function handleExtend() {
  
    </div>
    <div class="form-group">
-     <label for="kind_room">Kind of Room</label>
+     <label for="kind_room">Loại phòng</label>
      <select class="form-control" name="kind_room" id="kind_room" disabled>
        <option value='${dataPost.kind_room}' hidden>${dataPost.kind_room}</option>
        <option value='Motel Room'>Motel Room</option>
@@ -196,14 +200,14 @@ function handleExtend() {
      </select>
    </div>
    <div class="form-group">
-     <label for="number_room">Number of Room</label>
+     <label for="number_room">Số phòng</label>
      <input value='${dataPost.number_room}' disabled type="number" class="form-control" name="number_room" id="c"
        aria-describedby="helpId" placeholder="Enter Number of Room">
      <small id="error-number_room" class="form-text text-muted"></small>
    </div>
  
    <div class="form-group">
-     <label for="price">Prices</label>
+     <label for="price">Giá</label>
      <input value='${dataPost.price}' disabled type="text" class="form-control" name="price" id="price" aria-describedby="helpId"
        placeholder="Enter Near any public price month/quarter/year">
      <small id="error-price" class="form-text text-muted"></small>
@@ -211,13 +215,13 @@ function handleExtend() {
  
  
    <div class="form-group">
-     <label for="area">Area</label>
+     <label for="area">Diện tích</label>
      <input value='${dataPost.area}' disabled type="number" class="form-control" name="area" id="area" aria-describedby="helpId"
        placeholder="Enter Area">
      <small id="error-area" class="form-text text-muted"></small>
    </div>
    <div class="form-group">
-     <label for="general_owner">General owner</label>
+     <label for="general_owner">Chung chủ</label>
      <select class="form-control" name="general_owner" disabled id="general_owner">
        <option value= '${dataPost.general_owner}' hidden>${dataPost.general_owner}</option>
        <option value= 'Yes' >Yes</option>
@@ -226,9 +230,9 @@ function handleExtend() {
    </div>
    <div class="form-group">
      <div class="row">
-       <h2 class="col-sm-12">Physical facilities</h2>
+       <h2 class="col-sm-12">Cơ sở vật chất</h2>
        <div class="col-sm-6">
-         <label for="bathroom">Bathroom *</label>
+         <label for="bathroom">Phòng Tắm *</label>
          <select class="form-control" name="bathroom" disabled id="bathroom">
            <option value= '${dataPost.bathroom}' hidden>${dataPost.bathroom}</option>
  
@@ -237,7 +241,7 @@ function handleExtend() {
          </select>
        </div><!-- ennd col-6 -->
        <div class="col-sm-6">
-         <label for="hot_cold_bottles">Hot and cold bottles *</label>
+         <label for="hot_cold_bottles">Bình nóng lạnh *</label>
          <select class="form-control" disabled name="hot_cold_bottles" id="hot_cold_bottles">
            <option value= '${dataPost.hot_cold_bottles}' hidden>${dataPost.hot_cold_bottles}</option>
            <option value= 'Yes'>Yes</option>
@@ -245,7 +249,7 @@ function handleExtend() {
          </select>
        </div>
        <div class="col-sm-6">
-         <label for="kitchen">Kitchen Room</label>
+         <label for="kitchen">Nhà bếp</label>
          <select class="form-control" disabled name="kitchen" id="kitchen">
            <option value= '${dataPost.kitchen}' hidden>${dataPost.kitchen}</option>
            <option value= 'Closed'>Closed</option>
@@ -253,7 +257,7 @@ function handleExtend() {
          </select>
        </div><!-- ennd col-6 -->
        <div class="col-sm-6">
-         <label for="cooking">Cooking</label>
+         <label for="cooking">Nấu ăn</label>
          <select class="form-control" disabled name="cooking" id="cooking">
            <option value= '${dataPost.cooking}' hidden>${dataPost.cooking}</option>
            <option value= 'Yes' >Yes</option>
@@ -261,7 +265,7 @@ function handleExtend() {
          </select>
        </div><!-- ennd col-6 -->
        <div class="col-sm-6">
-         <label for="conditioning">Air Conditioning</label>
+         <label for="conditioning">Điều hòa</label>
          <select class="form-control" disabled name="conditioning" id="conditioning">
            <option value= '${dataPost.conditioning}' hidden>${dataPost.conditioning}</option>
            <option value= 'Yes' >Yes</option>
@@ -269,7 +273,7 @@ function handleExtend() {
          </select>
        </div><!-- ennd col-6 -->
        <div class="col-sm-6">
-         <label for="balcony">Balcony</label>
+         <label for="balcony">Ban công</label>
          <select class="form-control" disabled name="balcony" id="balcony">
            <option value= '${dataPost.balcony}' hidden>${dataPost.balcony}</option>
            <option value= 'Yes' >Yes</option>
@@ -279,13 +283,13 @@ function handleExtend() {
        <div class="col-sm-6">
          <div class="row">
            <div class="col-sm-6">
-             <label for="electricity_price">Electricity Price</label>
+             <label for="electricity_price">Giá điện</label>
              <input value='${dataPost.electricity_price}' disabled type="number" class="form-control" name="electricity_price"
                id="electricity_price " aria-describedby="helpId" placeholder="Electricity Price ">
              <small id="error-electricity_price" class="form-text text-muted"></small>
            </div>
            <div class="col-sm-6">
-             <label for="water_price">Water Price</label>
+             <label for="water_price">Giá nước</label>
              <input value='${dataPost.water_price}' disabled type="number" class="form-control" name="water_price"
                id="water_price " aria-describedby="helpId" placeholder="Water Price ">
              <small id="error-water_price" class="form-text text-muted"></small>
@@ -293,7 +297,7 @@ function handleExtend() {
          </div>
        </div><!-- ennd col-6 -->
        <div class="col-sm-6">
-         <label for="other_utility">Other Utility</label>
+         <label for="other_utility">Tiện ích khác</label>
          <input value='${dataPost.other_utility}' disabled type="text" class="form-control" name="other_utility"
            id="other_utility " aria-describedby="helpId"
            placeholder="Refrigerator / Washing machine / Bed cabinet etc...">
@@ -302,7 +306,7 @@ function handleExtend() {
      </div>
    </div> 
    <div class="form-group">
-     <label for="time_post">Time the post shows up</label>
+     <label for="time_post">Thời gian bài đăng</label>
      <select class="form-control" name="time_post"  id="time_post">
        <option value= '${dataPost.time_post}' hidden>${dataPost.time_post}</option>
        <option value= '7' >7</option>
@@ -326,8 +330,8 @@ function handleExtend() {
     console.log(error);
   })
 }
-
-
+ 
+ 
 function handleEditPost() {
   // cho vao model:  .content-update
   var idPost = $(this).attr("data-id");
@@ -345,31 +349,31 @@ function handleEditPost() {
     margin: 0;
     padding: 0
   }
-
+ 
   .images-detail .image-room {
     width: 20%;
-
+ 
   }
-
+ 
   label.hot-cold-bottles {
     display: block;
     margin-bottom: 12px;
   }
-
+ 
   label.general-owner {
     float: left;
   }
-
-
+ 
+ 
   label.general-owner+input {
     margin-left: 180px;
   }
-
+ 
   input#general-owner+span {
     width: 100px;
     display: inline-block;
   }
-
+ 
   input,
   select {
     width: 75% !important;
@@ -388,51 +392,51 @@ function handleEditPost() {
  
 <div>
   <div class="form-group">
-    <label for="address_room ">Address Room *</label>
+    <label for="address_room ">Địa chỉ phòng trọ *</label>
     <input value='${dataPost.address_room}' type="text" class="form-control" name="address_room" id="address_room ">
     <small id="error-address_room" class="form-text text-muted"></small>
   </div>
   <div class="form-group">
-    <label for="near_places ">Near any public places</label>
-
+    <label for="near_places ">Địa điểm công cộng gần đó</label>
+ 
     <input value='${dataPost.near_places}' type="text" class="form-control" name="near_places" id="near_places"
-      aria-describedby="helpId" placeholder="Enter Near any public places">
-
+      aria-describedby="helpId" placeholder="Nhập Địa điểm công cộng gần đó">
+ 
     <small id="error-near_places" class="form-text text-muted"></small>
-
+ 
   </div>
   <div class="form-group">
-    <label for="kind_room">Kind of Room</label>
+    <label for="kind_room">Loại phòng</label>
     <select class="form-control" name="kind_room" id="kind_room">
       <option value='${dataPost.kind_room}' hidden>${dataPost.kind_room}</option>
-      <option value='Motel Room'>Motel Room</option>
-      <option value='Mini apartment'>Mini apartment</option>
-      <option value='Whole house'>Whole house</option>
+      <option value='Motel Room'>Phòng trọ</option>
+      <option value='Mini apartment'>Chung cư mini</option>
+      <option value='Whole house'>Nhà nguyên căn</option>
     </select>
   </div>
   <div class="form-group">
-    <label for="number_room">Number of Room</label>
+    <label for="number_room">Số phòng</label>
     <input value='${dataPost.number_room}' type="number" class="form-control" name="number_room" id="c"
       aria-describedby="helpId" placeholder="Enter Number of Room">
     <small id="error-number_room" class="form-text text-muted"></small>
   </div>
-
+ 
   <div class="form-group">
-    <label for="price">Prices</label>
+    <label for="price">Giá</label>
     <input value='${dataPost.price}' type="text" class="form-control" name="price" id="price" aria-describedby="helpId"
       placeholder="Enter Near any public price month/quarter/year">
     <small id="error-price" class="form-text text-muted"></small>
   </div>
-
-
+ 
+ 
   <div class="form-group">
-    <label for="area">Area</label>
+    <label for="area">Diện tích</label>
     <input value='${dataPost.area}' type="number" class="form-control" name="area" id="area" aria-describedby="helpId"
-      placeholder="Enter Area">
+      placeholder="Nhập diện tích">
     <small id="error-area" class="form-text text-muted"></small>
   </div>
   <div class="form-group">
-    <label for="general_owner">General owner</label>
+    <label for="general_owner">Chung chủ</label>
     <select class="form-control" name="general_owner" id="general_owner">
       <option value= '${dataPost.general_owner}' hidden>${dataPost.general_owner}</option>
       <option value= 'Yes' >Yes</option>
@@ -441,18 +445,18 @@ function handleEditPost() {
   </div>
   <div class="form-group">
     <div class="row">
-      <h2 class="col-sm-12">Physical facilities</h2>
+      <h2 class="col-sm-12">Cơ sở vật chất</h2>
       <div class="col-sm-6">
-        <label for="bathroom">Bathroom *</label>
+        <label for="bathroom">Phòng Tắm </label>
         <select class="form-control" name="bathroom" id="bathroom">
           <option value= '${dataPost.bathroom}' hidden>${dataPost.bathroom}</option>
-
+ 
           <option value= 'Closed'>Closed</option>
           <option value= 'General'>General</option>
         </select>
       </div><!-- ennd col-6 -->
       <div class="col-sm-6">
-        <label for="hot_cold_bottles">Hot and cold bottles *</label>
+        <label for="hot_cold_bottles">Bình nóng lạnh</label>
         <select class="form-control" name="hot_cold_bottles" id="hot_cold_bottles">
           <option value= '${dataPost.hot_cold_bottles}' hidden>${dataPost.hot_cold_bottles}</option>
           <option value= 'Yes'>Yes</option>
@@ -460,7 +464,7 @@ function handleEditPost() {
         </select>
       </div>
       <div class="col-sm-6">
-        <label for="kitchen">Kitchen Room</label>
+        <label for="kitchen">Nhà bếp</label>
         <select class="form-control" name="kitchen" id="kitchen">
           <option value= '${dataPost.kitchen}' hidden>${dataPost.kitchen}</option>
           <option value= 'Closed'>Closed</option>
@@ -468,7 +472,7 @@ function handleEditPost() {
         </select>
       </div><!-- ennd col-6 -->
       <div class="col-sm-6">
-        <label for="cooking">Cooking</label>
+        <label for="cooking">Nấu ăn</label>
         <select class="form-control" name="cooking" id="cooking">
           <option value= '${dataPost.cooking}' hidden>${dataPost.cooking}</option>
           <option value= 'Yes' >Yes</option>
@@ -476,7 +480,7 @@ function handleEditPost() {
         </select>
       </div><!-- ennd col-6 -->
       <div class="col-sm-6">
-        <label for="conditioning">Air Conditioning</label>
+        <label for="conditioning">Điều hòa</label>
         <select class="form-control" name="conditioning" id="conditioning">
           <option value= '${dataPost.conditioning}' hidden>${dataPost.conditioning}</option>
           <option value= 'Yes' >Yes</option>
@@ -484,7 +488,7 @@ function handleEditPost() {
         </select>
       </div><!-- ennd col-6 -->
       <div class="col-sm-6">
-        <label for="balcony">Balcony</label>
+        <label for="balcony">Ban công</label>
         <select class="form-control" name="balcony" id="balcony">
           <option value= '${dataPost.balcony}' hidden>${dataPost.balcony}</option>
           <option value= 'Yes' >Yes</option>
@@ -494,13 +498,13 @@ function handleEditPost() {
       <div class="col-sm-6">
         <div class="row">
           <div class="col-sm-6">
-            <label for="electricity_price">Electricity Price</label>
+            <label for="electricity_price">Giá điện</label>
             <input value='${dataPost.electricity_price}' type="number" class="form-control" name="electricity_price"
               id="electricity_price " aria-describedby="helpId" placeholder="Electricity Price ">
             <small id="error-electricity_price" class="form-text text-muted"></small>
           </div>
           <div class="col-sm-6">
-            <label for="water_price">Water Price</label>
+            <label for="water_price">Giá nước</label>
             <input value='${dataPost.water_price}' type="number" class="form-control" name="water_price"
               id="water_price " aria-describedby="helpId" placeholder="Water Price ">
             <small id="error-water_price" class="form-text text-muted"></small>
@@ -508,7 +512,7 @@ function handleEditPost() {
         </div>
       </div><!-- ennd col-6 -->
       <div class="col-sm-6">
-        <label for="other_utility">Other Utility</label>
+        <label for="other_utility">Tiện ích khác</label>
         <input value='${dataPost.other_utility}' type="text" class="form-control" name="other_utility"
           id="other_utility " aria-describedby="helpId"
           placeholder="Refrigerator / Washing machine / Bed cabinet etc...">
@@ -517,7 +521,7 @@ function handleEditPost() {
     </div>
   </div> 
   <div class="form-group">
-    <label for="time_post">Time the post shows up</label>
+    <label for="time_post">Thời gian bài đăng</label>
     <select class="form-control" name="time_post" id="time_post">
       <option value= '${dataPost.time_post}' hidden>${dataPost.time_post}</option>
       <option value= '7' >7</option>
@@ -527,7 +531,7 @@ function handleEditPost() {
     </select>
   </div>
   <div class="  paymentDetail">
-
+ 
   </div>
   
 </div>
@@ -542,7 +546,7 @@ function handleEditPost() {
   })
 }
 {/*  */ }
-
+ 
 function handlePaymentPost() {
   var time_post = $('select[name="time_post"]').val();
   var idPost = $(this).attr('data-id');
@@ -598,14 +602,14 @@ function handlePaymentPost() {
                 <td class="col-md-1 text-center">$${price * time_post}</td>
               </tr> 
               <tr>
-                <td>   </td>
-                <td>   </td>
+                <td>   </td>
+                <td>   </td>
                 <td class="text-right">
                   <p>
-                    <strong>Tổng cộng: </strong>
+                    <strong>Tổng cộng: </strong>
                   </p>
                   <p>
-                    <strong>Thuế: </strong>
+                    <strong>Thuế: </strong>
                   </p>
                 </td>
                 <td class="text-center">
@@ -618,10 +622,10 @@ function handlePaymentPost() {
                 </td>
               </tr>
               <tr>
-                <td>   </td>
-                <td>   </td>
+                <td>   </td>
+                <td>   </td>
                 <td class="text-right">
-                  <h4><strong>Tổng tiền: </strong></h4>
+                  <h4><strong>Tổng tiền: </strong></h4>
                 </td>
                 <td class="text-center text-danger">
                   <h4><strong>$${price * time_post * 0.1 + price * time_post} </strong></h4>
@@ -644,13 +648,13 @@ function handlePaymentPost() {
   }).catch((error) => {
   })
 }
-
-
+ 
+ 
 function handleSavePost() {
   var statusPost = $(this).attr('data-status');
   var idPost = $(this).attr('data-id');
   var images_room = $(this).attr('data-images');
-
+ 
   var address_room = $('input[name="address_room"]').val();
   var near_places = $('input[name="near_places"]').val();
   var kind_room = $('select[name="kind_room"]').val();
@@ -698,7 +702,7 @@ function handleSavePost() {
         alert(result.message);
       }
     }).catch((error) => {
-
+ 
     })
   } 
   $.ajax({
@@ -728,10 +732,10 @@ function handleSavePost() {
       alert(result.message);
     }
   }).catch((error) => {
-
+ 
   })
 }
-
+ 
 function handleDeletePost() {
   var idPost = $(this).attr("data-id");
   $.ajax({

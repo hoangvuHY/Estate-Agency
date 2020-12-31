@@ -1,75 +1,106 @@
 <%include ../header-footer/header %>
-<div class="container content-waiting">
-</div>
-<%include ../header-footer/footer %>
-<script>
-  getData()
-  function getData() {
-    $.ajax({
-      method: 'GET',
-      url: '/admin/owner-verify'
-    }).then((result) => {
-      var { dataOwner } = result;
-      if (dataOwner.length > 0) {
-        console.log('Day la owner: ', dataOwner[0]);
-        var template;
+  <div class="container content-waiting">
+  </div>
+  <%include ../header-footer/footer %>
+    <script>
+      getData()
+      function getData() {
+        $.ajax({
+          method: 'GET',
+          url: '/admin/owner-verify'
+        }).then((result) => {
+          var { dataOwner } = result;
+          if (dataOwner.length > 0) {
+            console.log('Day la owner: ', dataOwner[0]);
+            var template;
 
 
-        if (dataOwner[0].status === 'pending') {
-          template =
-            `
-        <h1>You need to wait for approval</h1>
-        <h2>Click to return to the home page. If you click back immediately you will lose data </h2>
-        <button data-id = ${dataOwner[0]._id} onClick=handleWaiting.call(this) id="refresh-approve">Return Page</button>
-        `;
-          $(".content-waiting").append(template);
-          setTimeout(function () {
-            location.reload()
-          }, 1000 * 30);
-        }
-        else if (dataOwner[0].status === 'cancel') {
-          template =
-            `
-        <h1>Your request has been canceled</h1>
-        <h2>Click to return to the home page. If you click back immediately you will lose data </h2>
-        <button data-id = ${dataOwner[0]._id} onClick=handleWaiting.call(this) id="refresh-approve">Return Page</button>
-        `;
-          $(".content-waiting").append(template);
-          setTimeout(function () {
-            location.reload()
-          }, 1000 * 30);
-        }
-        else {
-          template =
-            `
-        <h1>Your request has been accepted</h1>
-        <h2>Click to return to the home page. If you click back immediately you will lose data </h2>
-        <button data-id = ${dataOwner[0]._id} onClick=handleWaiting.call(this) id="refresh-approve">Return Page</button>
-        `;
-          $(".content-waiting").append(template);
-          setTimeout(function () {
-            location.reload()
-          }, 1000 * 30);
-        }
-      } else {
-        window.location.href = '/';
+            if (dataOwner[0].status === 'pending') {
+              template =
+                `
+            <div class='notification-approval'>
+              <h1>Bạn cần chờ phê duyệt</h1>
+              <h4>Nhấn vào đây để trở về trang chủ. Nếu bạn nhấp lại ngay lập tức, bạn sẽ mất dữ liệu </h4>
+              
+              <button data-id = ${dataOwner[0]._id} onClick=handleWaiting.call(this) id="refresh-approve" type="button" class="btn btn-secondary btn-rounded">Quay lại trang</button>
+              </div>
+          `;
+
+              $(".content-waiting").append(template);
+              setTimeout(function () {
+                location.reload()
+              }, 1000 * 30);
+              $('body').attr('style', `height: 100vh;background: url(../background-login-logout.gif);background-size: cover;background-repeat: no-repeat;background-position-y: -29px;background-position-x: -5px;
+          display: flex;
+              align-items: center;
+              justify-content: center; 
+          `);
+              $('.notification-approval').attr('style', `
+            color : white;
+            text-align : center;
+            
+          `);
+
+
+            }
+            else if (dataOwner[0].status === 'cancel') {
+              template =
+                `
+            <div class='notification-approval'>
+              <h1>Your request has been canceled</h1>
+              <h4>Click to return to the home page. If you click back immediately you will lose data </h4>
+              <button data-id = ${dataOwner[0]._id} onClick=handleWaiting.call(this) id="refresh-approve" type="button" class="btn btn-secondary btn-rounded">Quay lại trang</button>
+       
+              </div>
+          `;
+              $(".content-waiting").append(template);
+              setTimeout(function () {
+                location.reload()
+              }, 1000 * 30);
+              $('body').attr('style', 'height: 100vh;background: url(../background-login-logout.gif);background-size: cover;background-repeat: no-repeat;background-position-y: -29px;background-position-x: -5px;');
+              $('.notification-approval').attr('style', `
+            color : white; 
+          `);
+
+            }
+            else {
+              template =
+                `<div class='notification-approval'>
+              <h1>Your request has been accepted</h1>
+                  <h4>Click to return to the home page. If you click back immediately you will lose data </h4>
+                  <button data-id = ${dataOwner[0]._id} onClick=handleWaiting.call(this) id="refresh-approve" type="button" class="btn btn-secondary btn-rounded">Quay lại trang</button>
+       
+              </div>
+            `;
+              $(".content-waiting").append(template);
+              setTimeout(function () {
+                location.reload()
+              }, 1000 * 30);
+              $('body').attr('style', 'height: 100vh;background: url(../background-login-logout.gif);background-size: cover;background-repeat: no-repeat;background-position-y: -29px;background-position-x: -5px;');
+              $('.notification-approval').attr('style', `
+            color : white; 
+          `);
+
+            }
+          } else {
+            window.location.href = '/';
+          }
+        }).catch((error) => {
+
+        })
       }
-    }).catch((error) => {
-
-    })
-  }
-  function handleWaiting() {
-    var idModify = $(this).attr("data-id");
-    $.ajax({
-      method: 'DELETE',
-      url: '/modify-owner/delete-owner/' + idModify
-    }).then((result) => {
-      if (!result.error && result.status === 200) {
-        alert(result.message);
-        window.location.href = '/';
-      }
-    }).catch((error) => {
-      console.log("This is waiting approve ejs: ", error);
-    })
-  }  
-</script>
+      function handleWaiting() {
+        var idModify = $(this).attr("data-id");
+        $.ajax({
+          method: 'DELETE',
+          url: '/modify-owner/delete-owner/' + idModify
+        }).then((result) => {
+          if (!result.error && result.status === 200) {
+            alert(result.message);
+            window.location.href = '/';
+          }
+        }).catch((error) => {
+          console.log("This is waiting approve ejs: ", error);
+        })
+      }  
+    </script>
