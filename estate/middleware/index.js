@@ -52,6 +52,29 @@ let checkLoginMiddleware = async (req, res, next) => {
   }
 }
 
+let checkAuthFavorite = async (req, res, next) => {
+  try {
+
+    var token = req.cookies.token || req.body.token;
+    // || req.headers.authorization;
+    if (token) {
+      let data = Verify(token, process.env.JWT_SECRET);
+      let user = await getUserByIdService(data._id);
+      if (user) {
+        req.userLocal = user;
+        next();
+      } else {
+        caseErrorUser(res, "Tài khoản không tồn tại");
+      }
+    } else {
+      res.redirect('/login');
+    }
+  } catch (error) {
+    res.redirect('/login');
+  }
+}
+
+
 //Check xem da dang nhap chua
 let checkAuth = async (req, res, next) => {
   try {
@@ -105,5 +128,7 @@ module.exports = {
   checkAuth,
   checkOwner_Admin,
   isIdOwnerMiddleware,
-  checkOwner
+  checkOwner,
+  checkAuthFavorite
 }
+

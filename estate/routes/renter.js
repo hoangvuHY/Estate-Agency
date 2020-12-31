@@ -1,8 +1,20 @@
 var express = require("express");
 var router = express.Router();
-var { getAllPostRecentControler, getAllPostProvinceControler, getAllPostListController, getDetailPostController, searchAllPostController } = require("../controllers/renterController");
 var { createReportController, createCommentController, allPostCommentsController } = require('../controllers/opinionController');
+// Đây là các đường dẫn đến backend server 
+var { findPostProvinceController, addSeenPostController, saveFavoritePostController, getAllPostRecentControler, getAllPostProvinceControler, getAllPostListController, getDetailPostController, searchAllPostController, getFavoritePostController } = require("../controllers/renterController");
+
 // Đây là các đường dẫn đến backend server
+
+router.post('/all-post-province', findPostProvinceController);
+
+router.post('/seen-post', addSeenPostController);
+
+router.post("/get-favorite-post", getFavoritePostController);
+
+router.post("/save-favorite-post", saveFavoritePostController);
+
+
 // lay tat ca ca bai dang theo chuoi tim kiem
 router.post("/search", searchAllPostController);
 // lấy tất cả các bài đăng

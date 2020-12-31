@@ -11,9 +11,13 @@ $(window).on('load', function () {
 
 
 /* Khi click vao moi bai viet */
-$(document).on("click", ".mom-article .carousel-item .col-md-4", function () {
-  location.assign(`/detail/${$(this).attr("id")}`);
-  Cookies.set("idPost", $(this).attr("id"));
+$(document).on("click", ".mom-article .carousel-item img", function () {
+  location.assign(`/detail/${$(this).attr("idpost")}`);
+  Cookies.set("idPost", $(this).attr("idpost"));
+});
+$(document).on("click", ".mom-article .carousel-item .title-article", function () {
+  location.assign(`/detail/${$(this).attr("idpost")}`);
+  Cookies.set("idPost", $(this).attr("idpost"));
 });
 
 Cookies.remove("search");
@@ -172,39 +176,42 @@ $.ajax({
   result.data.forEach((article, index) => {
 
     let html = `
-           <div class="carousel-item ${index == 0 ? "active" : ""}">
-              <div class="col-md-4" id=${article._id}>
-                <div class="amount-image">
-                  <i class="far fa-image"></i>
-                  <span id="amount-image">${article.images_room.length}</span>
-                </div>
-                <img class="img-fluid" src=${article.images_room[0]}>
-                <div class="card card-body">
+    <div class="carousel-item ${index == 0 ? "active" : ""}">
+       <div class="col-md-4">
+         <div class="amount-image">
+           <i class="far fa-image"></i>
+           <span id="amount-image">${article.images_room.length}</span>
+         </div>
+         <img class="img-fluid" src=${article.images_room[0]} idpost=${article._id}>
+         <div class="card card-body">
 
-                  <h5 class="card-title title-article">${article.kind_room}</h5>
-                  <div class="row info-article">
-                    <div class="col-6 text-left">
-                      <i class="fas fa-money-bill"></i><span>${article.price / 1000000} triệu/tháng</span>
-                    </div>
-                    <div class="col-6 text-right">
-                      <i class="fas fa-home"></i><span>${article.area} m<sup>2</sup></span>
-                    </div>
-                    <div class="col-12 text-left">
-                      <i class="fas fa-map-marker-alt"></i><span>${article.address_room}</span>
-                    </div>
-                    <div class="col-6 text-left">
-                      <i class="far fa-clock"></i><span>${(new Date(article.createdAt)).getDate()}/${(new Date(article.createdAt)).getMonth() + 1}/${(new Date(article.createdAt)).getFullYear()}</span>
-                    </div>
-                    <div class="col-6 text-right">
-                      <i class="far fa-heart" id="like"></i>
-                    </div>
+           <h5 class="card-title title-article" idpost=${article._id}>${article.kind_room}</h5>
+           <div class="row info-article">
+             <div class="col-6 text-left">
+               <i class="fas fa-money-bill"></i><span>${article.price / 1000000} triệu/tháng</span>
+             </div>
+             <div class="col-6 text-right">
+               <i class="fas fa-home"></i><span>${article.area} m<sup>2</sup></span>
+             </div>
+             <div class="col-12 text-left">
+               <i class="fas fa-map-marker-alt"></i><span>${article.address_room}</span>
+             </div>
+             <div class="col-6 text-left">
+               <i class="far fa-clock"></i><span>${(new Date(article.createdAt)).getDate()}/${(new Date(article.createdAt)).getMonth() + 1}/${(new Date(article.createdAt)).getFullYear()}</span>
+             </div>
+             <div class="col-3 text-right">
+                   <i class="far fa-eye text-info" id="seen"></i><span>${article.seen}</span>
+             </div>
+             <div class="col-3 text-right">
+                <i class="far fa-heart" id="like" idpost=${article._id}></i><span id="total-like">${article.like}</span>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+`;
 
 
-                  </div>
-                </div>
-              </div>
-            </div>
-    `;
     $(".mom-article").append(html);
 
   })

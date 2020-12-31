@@ -10,6 +10,7 @@ let userSchema = new Schema({
   email: String,//ok
   password: String,//ok
   role: { type: String, default: 'user' },//ok
+  favorite_post: [{type: String, ref: "poster_room"}],
 }, {
   collection: 'users',
   timestamps: true,

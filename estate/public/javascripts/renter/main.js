@@ -21,9 +21,10 @@ function getLoginRegister() {
     }).then((result) => {
       if (!result.error && result.status === 200) {
         var dataUser = result.dataUser;
+        Cookies.set("idRenter", dataUser._id);
         template = `
         <div class="amount-like">
-            <div id="amount-like">3</div>
+        <div id="amount-like">${dataUser.favorite_post.length}</div>
             <i class="far fa-heart"></i></span>
         </div>
         <a href='#' id="login">${dataUser.name}</a>

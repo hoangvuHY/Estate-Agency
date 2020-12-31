@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-let { checkAuth, checkOwner, checkAdmin, checkOwner_Admin } = require('../middleware/index');
+let { checkAuth, checkOwner, checkAdmin, checkOwner_Admin, checkAuthFavorite } = require('../middleware/index');
 let { checkAuthController } = require('../controllers/authController')
 
 
@@ -11,29 +11,28 @@ router.get('/register', function (req, res, next) {
   res.render('login_register/register');
 });
 
- // Đây là router đến giao diện cline của renter, và các đường link trong router chính là các đường link sẽ hiện lên thanh url của người dùng
+// Đây là router đến giao diện cline của renter, và các đường link trong router chính là các đường link sẽ hiện lên thanh url của người dùng
 
-router.get(`/list/loai_nha_tro/:loai_nha_tro/tinh/:tinh/huyen/:huyen/xa/:xa/duong/:duong/an_ninh/:an_ninh/dien_tich_min/:dien_tich_min/dien_tich_max/:dien_tich_max/muc_gia_min/:muc_gia_min/muc_gia_max/:muc_gia_max/ban_cong/:ban_cong/dieu_hoa/:dieu_hoa/binh_nong_lanh/:binh_nong_lanh/tu_lanh/:tu_lanh/may_giat/:may_giat`, function(req, res, next){
-    res.render('renter/search');
+router.get(`/list/loai_nha_tro/:loai_nha_tro/tinh/:tinh/huyen/:huyen/xa/:xa/duong/:duong/an_ninh/:an_ninh/dien_tich_min/:dien_tich_min/dien_tich_max/:dien_tich_max/muc_gia_min/:muc_gia_min/muc_gia_max/:muc_gia_max/ban_cong/:ban_cong/dieu_hoa/:dieu_hoa/binh_nong_lanh/:binh_nong_lanh/tu_lanh/:tu_lanh/may_giat/:may_giat`, function (req, res, next) {
+  res.render('renter/search');
 });
 
-router.get('/list', function(req, res, next){
-   res.render('renter/list');
+router.get('/list', function (req, res, next) {
+  res.render('renter/list');
 
 });
 
-router.get('/detail/:idPost', function(req, res, next){
+router.get('/detail/:idPost', function (req, res, next) {
   res.render('renter/detail');
 });
 
 
-router.get('/favorite', function(req, res, next){
+router.get('/favorite', checkAuthFavorite, function (req, res, next) {
   res.render('renter/favorite');
 });
 
-router.get('/', checkAuth, checkAuthController);
- // Kết thúc router đến giao diện cline của renter
-
+router.get('/', checkAuth, checkAuthController); // giao dien trang chu
+// Kết thúc router đến giao diện cline của renter 
 
 router.get('/profile-owner', checkAuth, function (req, res, next) {
   res.render('owners/profile-owner', { title: 'Profile' });

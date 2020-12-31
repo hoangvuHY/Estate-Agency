@@ -79,7 +79,9 @@ const posterRoomSchema = mongoose.Schema({
   expire_post: {
     type: Date,
     require: true
-  }
+  },
+  seen: { type: Number, default: 0 },
+  like: { type: Number, default: 0 }
 }, {
   collection: 'poster_room',
   timestamps: true
