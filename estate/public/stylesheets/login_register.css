@@ -161,6 +161,22 @@ form.sign-in-form {
   color: white;
 }
 
+p.social-text a {
+    width: 60px;
+    height: 30px;
+    background: #7da603cc;
+    display: inline-block;
+    color: white;
+    padding-top: 3px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.3s all;
+}
+
+p.social-text a:hover {
+    background: #c0ff05;
+}
+
 .social-media {
   display: flex;
   justify-content: center;
