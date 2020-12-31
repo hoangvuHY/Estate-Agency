@@ -20,9 +20,7 @@ function getLoginRegister() {
       url: '/users/user-detail' // localhost:3000/users/user-detail đúng ko
     }).then((result) => {
       if (!result.error && result.status === 200) {
-        console.log(result);
         var dataUser = result.dataUser;
-        console.log(dataUser);
         template = `
         <div class="amount-like">
             <div id="amount-like">3</div>

@@ -763,7 +763,7 @@ function handleHiredPost() {
       result.message = 'Bạn đã cho thuê thành công';
       alert(result.message);
       $(this).parent().empty();
-      window.location.href = '/table';
+      window.location.href = '/';
     } else {
       alert(result.message);
     }

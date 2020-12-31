@@ -170,15 +170,14 @@
                                     style="width: 100%;">
                                     <thead>
                                       <tr role="row">
-                                        <th style="width: 250px;">Name</th>
-                                        <th style="width: 250px;">Address</th>
-                                        <th style="width: 150px;">Phone</th>
-                                        <th style="width: 150px;">Username</th>
-                                        <th style="width: 50px;">Status</th>
-                                        <th style="width: 150px;">Handle</th>
+                                        <th>Render Name</th>
+                                        <th>ID Post</th>
+                                        <th>status</th>
+                                        <th>Comment</th>
+                                        <th>Handle</th>
                                       </tr>
                                     </thead>
-                                    <tbody id="detailOwners">
+                                    <tbody id="detailComments">
                                     </tbody>
                                   </table>
                                 </div>
@@ -203,68 +202,68 @@
 
   <!-- start: right menu -->
   <%include right-menu %>
-  <!-- end: right menu -->
+    <!-- end: right menu -->
 
-  </div>
-
-
-
-
-
-
-
-
-  <!-- start: Mobile -->
-  <%include mobile %>
-
-    <!-- end: Mobile -->
-
-    <!-- start: Javascript -->
-    <script src="../asset/js/jquery.min.js"></script>
-    <script src="../asset/js/jquery.ui.min.js"></script>
-    <script src="../asset/js/bootstrap.min.js"></script>
-
-
-
-    <!-- plugins -->
-    <script src="../asset/js/plugins/moment.min.js"></script>
-    <script src="../asset/js/plugins/jquery.datatables.min.js"></script>
-    <script src="../asset/js/plugins/datatables.bootstrap.min.js"></script>
-    <script src="../asset/js/plugins/jquery.nicescroll.js"></script>
-
-
-    <!-- custom -->
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="../asset/js/main.js"></script>
-    <div id="ascrail2000" class="nicescroll-rails"
-      style="width: 7px; z-index: 222; cursor: default; position: fixed; top: 0px; left: 223px; height: 652px; opacity: 0;">
-      <div
-        style="position: relative; top: 0px; float: right; width: 5px; height: 467px; background-color: rgb(33, 150, 243); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;">
-      </div>
     </div>
-    <div id="ascrail2000-hr" class="nicescroll-rails"
-      style="height: 7px; z-index: 222; top: 645px; left: 0px; position: fixed; cursor: default; display: none; width: 223px; opacity: 0;">
-      <div
-        style="position: relative; top: 0px; height: 5px; width: 230px; background-color: rgb(33, 150, 243); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;">
+
+
+
+
+
+
+
+
+    <!-- start: Mobile -->
+    <%include mobile %>
+
+      <!-- end: Mobile -->
+
+      <!-- start: Javascript -->
+      <script src="../asset/js/jquery.min.js"></script>
+      <script src="../asset/js/jquery.ui.min.js"></script>
+      <script src="../asset/js/bootstrap.min.js"></script>
+
+
+
+      <!-- plugins -->
+      <script src="../asset/js/plugins/moment.min.js"></script>
+      <script src="../asset/js/plugins/jquery.datatables.min.js"></script>
+      <script src="../asset/js/plugins/datatables.bootstrap.min.js"></script>
+      <script src="../asset/js/plugins/jquery.nicescroll.js"></script>
+
+
+      <!-- custom -->
+      <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script src="../asset/js/main.js"></script>
+      <div id="ascrail2000" class="nicescroll-rails"
+        style="width: 7px; z-index: 222; cursor: default; position: fixed; top: 0px; left: 223px; height: 652px; opacity: 0;">
+        <div
+          style="position: relative; top: 0px; float: right; width: 5px; height: 467px; background-color: rgb(33, 150, 243); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;">
+        </div>
       </div>
-    </div>
-    <div id="ascrail2001" class="nicescroll-rails"
-      style="width: 26px; z-index: -1; cursor: -webkit-grab; position: absolute; top: 0px; left: 74px; height: 300px; display: none;">
-      <div
-        style="position: relative; top: 0px; float: right; width: 24px; height: 0px; background-color: rgb(33, 150, 243); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;">
+      <div id="ascrail2000-hr" class="nicescroll-rails"
+        style="height: 7px; z-index: 222; top: 645px; left: 0px; position: fixed; cursor: default; display: none; width: 223px; opacity: 0;">
+        <div
+          style="position: relative; top: 0px; height: 5px; width: 230px; background-color: rgb(33, 150, 243); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;">
+        </div>
       </div>
-    </div>
-    <div id="ascrail2001-hr" class="nicescroll-rails"
-      style="height: 26px; z-index: -1; top: 274px; left: 0px; position: absolute; display: none;">
-      <div
-        style="position: relative; top: 0px; height: 24px; width: 0px; background-color: rgb(33, 150, 243); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;">
+      <div id="ascrail2001" class="nicescroll-rails"
+        style="width: 26px; z-index: -1; cursor: -webkit-grab; position: absolute; top: 0px; left: 74px; height: 300px; display: none;">
+        <div
+          style="position: relative; top: 0px; float: right; width: 24px; height: 0px; background-color: rgb(33, 150, 243); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;">
+        </div>
       </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="../javascripts/admins/request-owners.js"></script>
-    <!-- end: Javascript -->
+      <div id="ascrail2001-hr" class="nicescroll-rails"
+        style="height: 26px; z-index: -1; top: 274px; left: 0px; position: absolute; display: none;">
+        <div
+          style="position: relative; top: 0px; height: 24px; width: 0px; background-color: rgb(33, 150, 243); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;">
+        </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script src="../javascripts/admins/commnent-render.js"></script>
+      <!-- end: Javascript -->
 </body>
 
 </html>

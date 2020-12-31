@@ -32,6 +32,17 @@ h1{
 	color:  rgb(55, 55, 55);
 	font-size: 20px;
 }
+
+.report div input {
+    border: none;
+    background: none;
+    color: #373737;
+    margin-bottom: 10px;
+}
+
+.report div {
+    height:;
+}
 	
 
 .child2 > div{

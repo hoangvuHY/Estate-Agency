@@ -113,7 +113,7 @@ $("#btn-register").click((e) => {
     $("#identification").focus();
     check = false;
   } else {
-    var patternIdentification = /^\d{13}$/
+    var patternIdentification = /^\d{12}$/
     if (!patternIdentification.test(identification)) {
       $("#errorIdentification").text("Please enter right validation.Enough 13 number").show();
       $("#identification").focus();

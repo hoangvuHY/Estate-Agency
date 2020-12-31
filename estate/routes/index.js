@@ -65,6 +65,14 @@ router.get('/mail-box', checkAuth, checkAdmin, function (req, res, next) {
 router.get('/request-owners', checkAuth, checkAdmin, function (req, res, next) {
   res.render('admin/request-modify-owner', { title: 'Express' });
 });
+//Báo cáo của người dùng
+router.get('/report-render', checkAuth, checkAdmin, function (req, res, next) {
+  res.render('admin/report-render', { title: 'Express' });
+});
+//comment của người dùng
+router.get('/comment-render', checkAuth, checkAdmin, function (req, res, next) {
+  res.render('admin/comment-render', { title: 'Express' });
+});
 router.get('/admin-chat-room', checkAuth, checkAdmin, function (req, res, next) {
   res.render('admin/credits-copy', { title: 'Express' });
 });
