@@ -52,16 +52,17 @@ const checkPasswordMiddleware = async (req, res, next) => {
 }
 const checkTokenMiddleware = async (req, res, next) => {
   try {
-    const token = req.body.token || req.header("Cookie").split("=")[1];
+    const token = req.body.token  || req.cookies.token;// || req.header("Cookie").split("=")[1]
     const dataUser = Verify(token);
+
     if (dataUser) {
       req.user = dataUser.user;
       next();
     } else {
-      caseErrorClient(res, "Token của bạn không hợp lệ")
+      res.redirect('/login')
     }
   } catch (error) {
-    caseErrorServer(res, error);
+    res.redirect('/login')
   }
 }
 

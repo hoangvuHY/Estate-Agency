@@ -1,0 +1,148 @@
+body {
+  background: #3F093F;
+}
+
+@media only screen and (min-width: 601px) {
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sriracha', cursive;
+  }
+  .modal-content {
+    height: 363px;
+  }
+  .card {
+    height: 475px;
+  }
+  #nav-mobile {
+    display: inline !important;
+  }
+  .books-card {
+    margin-top: 20px;
+  }
+  .card-action {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card .card-content p.description {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    display: -webkit-box;
+    overflow: hidden;
+  }
+  .card-action a, .card-action button {
+    width: 70px;
+    font-size: 11px;
+    border-radius: 10px;
+    background: #FFC107;
+  }
+  .card-action a:hover {
+    background: #E0A800;
+  }
+  .card-action button:hover {
+    background: #C82333;
+  }
+  .card-action button {
+    font-weight: 700;
+    font-style: italic;
+    background: #DC3545;
+  }
+  p.book-authors {
+    position: absolute;
+    right: 20px;
+    padding-left: 30px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    overflow: hidden;
+    bottom: 0;
+  }
+  .card-content {
+    position: relative;
+    height: 230px;
+  }
+  .modal- footer {
+    background: none !important;
+  }
+  .modal-footer {
+    background: none !important;
+  }
+  .modal-footer a {
+    background: white;
+    color: #07193F;
+    font-weight: 700;
+    position: relative;
+    right: 35px;
+    bottom: 17px;
+  }
+  .modal-content .row {
+    height: 43px;
+  }
+  .name-book {
+    margin-bottom: 33px;
+  }
+  .modal-content .row input, .modal-content .row textarea {
+    color: white;
+  }
+  .row .input-field {
+    width: 95%;
+    margin-left: 11px;
+  }
+  .input-field label, .input-field label::after {
+    color: #F5F5F5 !important;
+  }
+  form#add-book, div#update-book {
+    width: 490px;
+    height: 440px;
+    background: #3F093F;
+    border: 10px solid white;
+  }
+  form#add-book .modal-content h4, div#update-book .modal-content h4 {
+    color: white;
+  }
+  a.brand-logo {
+    color: #F5F5F5;
+    width: 100%;
+  }
+  nav.nav-bar-home {
+    background: none;
+  }
+  nav.nav-bar-home ul li a {
+    font-size: 20px;
+    color: #BBAABB;
+    transition: all 0.5s;
+  }
+  nav.nav-bar-home ul li a:hover {
+    color: #F5F5EA;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 600px) {
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sriracha', cursive;
+  }
+  .nav-bar-home {
+    background: none !important;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sriracha', cursive;
+  }
+  .card {
+    margin-bottom: 23px;
+  }
+  .card-content {
+    height: 182px;
+  }
+  .nav-bar-home {
+    background: none !important;
+    margin-bottom: 20px;
+  }
+}

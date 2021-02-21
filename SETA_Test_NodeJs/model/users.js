@@ -11,7 +11,7 @@ const UsersSchema = new Schema({
     type: String,
     require: true
   },
-  birthday: Date,
+  birthday: Date, 
   address: String
 }, {
   collection: 'users',
